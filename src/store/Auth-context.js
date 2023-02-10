@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const AuthContext = React.createContext({
   token: '',
@@ -8,6 +9,7 @@ const AuthContext = React.createContext({
 });
 
 export const AuthContextProvider = (props) => {
+  const history = useHistory();
   const [token, setToken] = useState(null);
 
   const userIsLoggedIn = !!token;//if token is null,it will store false
@@ -17,7 +19,9 @@ export const AuthContextProvider = (props) => {
   };
 
   const logoutHandler = () => {
-    setToken(null); //on logout token should be set to null
+    setToken(null);
+    console.log('Logged Out')
+     //on logout token should be set to null
   };
 
   const contextValue = {
