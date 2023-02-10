@@ -25,7 +25,7 @@ const ProfileForm = () => {
     }).then(res => {
       // assumption: Always succeeds!
        console.log('changed successfully')
-       history.replace('/')
+       history.replace('/auth')
 
     });
   }; 
