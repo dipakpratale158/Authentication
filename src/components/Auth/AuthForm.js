@@ -47,6 +47,7 @@ const AuthForm = () => {
 
       if (res.ok) {
         console.log(res)
+        alert('Succesful')
         return res.json();
       } else {
         res.json().then(data => {   // Json also return promises milan
